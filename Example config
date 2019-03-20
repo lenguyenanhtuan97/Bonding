@@ -1,1 +1,27 @@
-
+# cat /etc/sysconfig/network-scripts/ifcfg-bond0
+  DEVICE=bond0
+  TYPE=Bond
+  NAME=bond0
+  BONDING_MASTER=yes
+  BOOTPROTO=none
+  ONBOOT=yes
+  IPADDR=192.168.88.95
+  NETMASK=255.255.255.0
+  GATEWAY=192.168.88.2
+  BONDING_OPTS="mode=5 miimon=100"
+# cat /etc/sysconfig/network-scripts/ifcfg-ens37
+  TYPE=Ethernet
+  BOOTPROTO=none
+  DEVICE=ens37
+  ONBOOT=yes
+  HWADDR="00:0c:29:65:9c:9a"      // using ip addr to show  
+  MASTER=bond0
+  SLAVE=yes
+# cat /etc/sysconfig/network-scripts/ifcfg-ens38
+  TYPE=Ethernet
+  BOOTPROTO=none
+  DEVICE=ens38
+  ONBOOT=yes
+  HWADDR="00:0c:29:65:9c:a4"       // using ip addr to show
+  MASTER=bond0
+  SLAVE=yes
